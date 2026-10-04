@@ -1,0 +1,94 @@
+# Citizen Complaint Management System
+
+**OOP1 individual assignment project by Joseph Kambay**
+
+This beginner Python program demonstrates how a government department could record and track public service complaints. The sample complaints are fictional and the program keeps them in memory only while it is running.
+
+## Problem and solution
+
+Citizens need a simple way to report issues such as damaged roads or missed waste collection. This prototype records a complaint ID, category, community area, description, status, and assigned department. It can display all records and update a complaint's status.
+
+## Requirements
+
+- Python 3
+- No third-party packages are required
+
+## Run the program
+
+1. Download or clone this project.
+2. Open a terminal in the project folder.
+3. Run:
+
+   ```bash
+   python citizen_complaints.py
+   ```
+
+## Example usage
+
+The program creates two fictional complaint objects, assigns them to the suitable departments, adds them to a dictionary, updates one status, and displays the records.
+
+Example output:
+
+```text
+Complaint C001 assigned to Roads Department.
+Complaint C002 assigned to Waste Department.
+Complaint C001 added successfully.
+Complaint C002 added successfully.
+Complaint C001 status updated.
+
+Total complaint objects created: 2
+Is 'Resolved' a valid status? True
+
+ALL COMPLAINTS
+
+--------------------
+Complaint ID: C001
+Category: Roads
+Area: Central Freetown
+Description: A section of the road needs repair.
+Status: In Progress
+Department: Roads Department
+
+--------------------
+Complaint ID: C002
+Category: Waste Collection
+Area: Lumley
+Description: Rubbish has not been collected this week.
+Status: Pending
+Department: Waste Department
+```
+
+## Object-oriented design
+
+- `Complaint` represents one complaint. Its attributes store the ID, category, area, description, status, and assigned department.
+- `Department` represents a government department and assigns complaints that match its supported category.
+- Instance methods display complaint information, update a complaint's status, and assign a department.
+- The `@classmethod` `get_total_created()` returns the number of complaint objects created.
+- The `@staticmethod` `is_valid_status()` checks that a status is `Pending`, `In Progress`, or `Resolved`.
+- A dictionary stores complaint objects by unique complaint ID. Functions add and display records.
+
+## Digital Public Goods alignment
+
+### Open source
+
+The source code is available in this repository under the MIT License. Users may read, run, and adapt it subject to the license terms.
+
+### Inclusive and accessible design
+
+The program uses plain-language labels and simple console output. It uses standard Python and does not require paid software or third-party packages.
+
+### Privacy-respecting
+
+The program does not request names, phone numbers, passwords, or other sensitive personal information. The example complaints are fictional. Users should not enter personal or confidential information in descriptions.
+
+### Modular and reusable
+
+The program separates complaint and department behavior into classes and uses functions for adding and displaying records. These components can be reused in a larger prototype.
+
+## Limitations
+
+This is an educational prototype, not an official government service. Records are not saved after the program closes, and the program is not connected to a government database.
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
